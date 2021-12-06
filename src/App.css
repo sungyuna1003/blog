@@ -2,9 +2,23 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+.black-nav {
+  background-color: #111;
+  width: 100%;
+  display: flex;
+  color: #fff;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.list {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
