@@ -37,7 +37,7 @@ function App() {
       <div className="black-nav">
         <div>Yuna's blog</div>
       </div>
-      <button onClick={제목변경}>제목변경</button>
+      {/* <button onClick={제목변경}>제목변경</button>
       <button onClick={제목정렬}>제목정렬</button>
       <div className="list">
         <h3>
@@ -67,14 +67,13 @@ function App() {
         <hr />
       </div>
       <h2>map (+function)</h2>
-
       <div className="list">
         <h3 onClick={modal보이기}>{글제목[2]}</h3>
         <p>4월 17일 발행</p>
         {반복된UI()}
-
         <hr />
-      </div>
+      </div> */}
+
       <h2>map 편법</h2>
       {글제목.map(function (글) {
         return (
@@ -91,18 +90,18 @@ function App() {
               {따봉}
             </h3>
             <p>3월 17일 발행</p>
-            <button
-              onClick={() => {
-                modal변경(!modal);
-              }}
-            >
-              show/hide
-            </button>
+
             <hr />
           </div>
         );
       })}
-
+      <button
+        onClick={() => {
+          modal변경(!modal);
+        }}
+      >
+        show/hide
+      </button>
       {modal === true ? <Modal /> : null}
     </div>
   );
