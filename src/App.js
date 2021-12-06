@@ -10,6 +10,8 @@ function App() {
 
   let [modal, modal변경] = useState(false);
 
+  let [입력값, 입력값변경] = useState("");
+
   function 제목변경() {
     var newArray = [...글제목];
     newArray[0] = "맛집추천";
@@ -95,6 +97,13 @@ function App() {
           </div>
         );
       })}
+      {/* {입력값}
+      <input
+        onChange={(e) => {
+          입력값변경(e.target.value);
+        }}
+      /> */}
+
       <button
         onClick={() => {
           modal변경(!modal);
@@ -102,14 +111,14 @@ function App() {
       >
         show/hide
       </button>
-      {modal === true ? <Modal /> : null}
+      {modal === true ? <Modal 글제목이다={글제목} /> : null}
     </div>
   );
 }
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h2>제목</h2>
+      <h2>제목:{props.글제목이다[0]}</h2>
       <p>날짜</p>
       <p>상세내용</p>
     </div>
