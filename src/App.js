@@ -77,9 +77,9 @@ function App() {
       </div> */}
 
       <h2>map 편법</h2>
-      {글제목.map(function (글) {
+      {글제목.map(function (글, i) {
         return (
-          <div className="list">
+          <div className="list" key={i}>
             <h3>
               {글}
               <span
@@ -97,12 +97,12 @@ function App() {
           </div>
         );
       })}
-      {/* {입력값}
+
       <input
         onChange={(e) => {
           입력값변경(e.target.value);
         }}
-      /> */}
+      />
 
       <button
         onClick={() => {
