@@ -23,6 +23,7 @@ function App() {
   function modal보이기() {
     modal변경(true);
   }
+
   return (
     <div className="App">
       <div className="black-nav">
@@ -48,8 +49,13 @@ function App() {
       <div className="list">
         <h3>{글제목[1]}</h3>
         <p>3월 17일 발행</p>
-        <button>show/hide</button>
-
+        <button
+          onClick={() => {
+            modal변경(!modal);
+          }}
+        >
+          show/hide
+        </button>
         <hr />
       </div>
       <div className="list">
