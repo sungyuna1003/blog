@@ -15,11 +15,6 @@ function App() {
   }
   function 제목정렬() {
     var newArray = [...글제목];
-    newArray[0] = "맛집추천";
-    글제목변경(newArray);
-  }
-  function 제목정렬() {
-    var newArray = [...글제목];
     newArray = newArray.sort();
     글제목변경(newArray);
   }
@@ -56,8 +51,17 @@ function App() {
         <p>4월 17일 발행</p>
         <hr />
       </div>
+      <Modal />
     </div>
   );
 }
-
+function Modal() {
+  return (
+    <div className="modal">
+      <h2>제목</h2>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  );
+}
 export default App;
