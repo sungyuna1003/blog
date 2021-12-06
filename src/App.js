@@ -23,6 +23,14 @@ function App() {
   function modal보이기() {
     modal변경(true);
   }
+  function 반복된UI() {
+    var 어레이 = [];
+
+    for (var i = 0; i < 3; i++) {
+      어레이.push(<div>hello</div>);
+    }
+    return 어레이;
+  }
 
   return (
     <div className="App">
@@ -58,11 +66,43 @@ function App() {
         </button>
         <hr />
       </div>
+      <h2>map (+function)</h2>
+
       <div className="list">
         <h3 onClick={modal보이기}>{글제목[2]}</h3>
         <p>4월 17일 발행</p>
+        {반복된UI()}
+
         <hr />
       </div>
+      <h2>map 편법</h2>
+      {글제목.map(function (글) {
+        return (
+          <div className="list">
+            <h3>
+              {글}
+              <span
+                onClick={() => {
+                  따봉변경(따봉 + 1);
+                }}
+              >
+                👍
+              </span>
+              {따봉}
+            </h3>
+            <p>3월 17일 발행</p>
+            <button
+              onClick={() => {
+                modal변경(!modal);
+              }}
+            >
+              show/hide
+            </button>
+            <hr />
+          </div>
+        );
+      })}
+
       {modal === true ? <Modal /> : null}
     </div>
   );
